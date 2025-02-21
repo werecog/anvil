@@ -14,6 +14,22 @@
   display: grid;
 }
 
+.w-embed-youtubevideo {
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg');
+  background-position: 50%;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+
+.w-embed-youtubevideo:empty {
+  min-height: 75px;
+  padding-bottom: 56.25%;
+}
+
 .w-backgroundvideo-backgroundvideoplaypausebutton:focus-visible {
   outline-offset: 2px;
   border-radius: 50%;
@@ -81,7 +97,7 @@ label {
 }
 
 .hero-section {
-  background-image: url('../images/WhatsApp-Image-2025-02-22-at-01.36.31.jpeg');
+  background-image: url('../images/Anvil-Hero-Img.jpg');
   background-position: 50%;
   background-size: cover;
   border-bottom-left-radius: 100px;
@@ -1818,6 +1834,10 @@ label {
   cursor: pointer;
 }
 
+.service-5 {
+  display: none;
+}
+
 .slider-3 {
   background-color: #0000;
   width: 100%;
@@ -1855,6 +1875,7 @@ label {
   align-items: center;
   width: 100%;
   height: 100%;
+  transition: all .3s;
   display: flex;
 }
 
@@ -1878,6 +1899,44 @@ label {
 
 .play-pause-button {
   margin-right: auto;
+}
+
+.service-6 {
+  z-index: 2147483647;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  background-color: #0006;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 60px;
+  display: none;
+  position: fixed;
+  inset: 0%;
+}
+
+.div-block-61 {
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+}
+
+.code-embed-11 {
+  color: var(--neon-green);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: all .3s;
+  display: flex;
+}
+
+.code-embed-11:hover {
+  color: #fff;
 }
 
 @media screen and (min-width: 1280px) {
@@ -2887,11 +2946,26 @@ label {
     width: 60px;
     height: 60px;
   }
+
+  .service-6 {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 30px;
+  }
+
+  .code-embed-11 {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media screen and (max-width: 479px) {
   h1 {
     font-size: 21px;
+  }
+
+  .hero-section {
+    height: 40vh;
   }
 
   .hero-section.registration {
