@@ -5,15 +5,6 @@
   --light-blue: #83caf6;
 }
 
-.w-layout-grid {
-  grid-row-gap: 16px;
-  grid-column-gap: 16px;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  display: grid;
-}
-
 .w-embed-youtubevideo {
   background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg');
   background-position: 50%;
@@ -28,6 +19,15 @@
 .w-embed-youtubevideo:empty {
   min-height: 75px;
   padding-bottom: 56.25%;
+}
+
+.w-layout-grid {
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
 }
 
 .w-backgroundvideo-backgroundvideoplaypausebutton:focus-visible {
@@ -97,16 +97,18 @@ label {
 }
 
 .hero-section {
-  background-image: url('../images/Anvil-Hero-Img.jpg');
-  background-position: 50%;
-  background-size: cover;
+  aspect-ratio: 16 / 9;
+  background-image: none;
+  background-position: 0 0;
+  background-size: auto;
   border-bottom-left-radius: 100px;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
+  position: relative;
   overflow: visible;
 }
 
@@ -1089,6 +1091,7 @@ label {
 }
 
 .navbar {
+  z-index: 100;
   background-color: #0000;
   justify-content: center;
   align-items: center;
@@ -1109,7 +1112,8 @@ label {
 
 .brand.w--current {
   background-color: #0000;
-  padding-left: 0;
+  background-image: linear-gradient(#00000073, #00000073);
+  padding-left: 20px;
 }
 
 .container-2 {
@@ -1898,7 +1902,11 @@ label {
 }
 
 .play-pause-button {
-  margin-right: auto;
+  z-index: 5;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  inset: 0;
 }
 
 .service-6 {
@@ -1937,6 +1945,11 @@ label {
 
 .code-embed-11:hover {
   color: #fff;
+}
+
+.youtube {
+  border-bottom-left-radius: 100px;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 1280px) {
@@ -2052,10 +2065,6 @@ label {
 
   h6 {
     font-size: 44px;
-  }
-
-  .hero-section {
-    height: 100vh;
   }
 
   .section {
@@ -2278,7 +2287,8 @@ label {
 
   .brand.w--current {
     margin-right: auto;
-    padding-left: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .service-1-popup {
@@ -2466,10 +2476,6 @@ label {
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 24px;
-  }
-
-  .hero-section {
-    height: 40vh;
   }
 
   .hero-section.registration {
@@ -2950,7 +2956,7 @@ label {
   .service-6 {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    padding: 30px;
+    padding: 20px;
   }
 
   .code-embed-11 {
@@ -2962,10 +2968,6 @@ label {
 @media screen and (max-width: 479px) {
   h1 {
     font-size: 21px;
-  }
-
-  .hero-section {
-    height: 40vh;
   }
 
   .hero-section.registration {
@@ -3097,7 +3099,17 @@ label {
     font-size: 14px;
   }
 
-  .div-block-32, .grid-4, .notice {
+  .div-block-32, .grid-4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .brand.w--current {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .notice {
     padding-left: 20px;
     padding-right: 20px;
   }
