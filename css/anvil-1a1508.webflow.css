@@ -14,6 +14,12 @@
   display: grid;
 }
 
+.w-backgroundvideo-backgroundvideoplaypausebutton:focus-visible {
+  outline-offset: 2px;
+  border-radius: 50%;
+  outline: 2px solid #3b79c3;
+}
+
 body {
   color: var(--navy-blue);
   font-family: Barlow, sans-serif;
@@ -75,7 +81,7 @@ label {
 }
 
 .hero-section {
-  background-image: url('../images/hero-anvil.webp');
+  background-image: url('../images/WhatsApp-Image-2025-02-22-at-01.36.31.jpeg');
   background-position: 50%;
   background-size: cover;
   border-bottom-left-radius: 100px;
@@ -220,6 +226,7 @@ label {
 }
 
 .div-block {
+  z-index: 2;
   background-image: linear-gradient(#0000001a, #0000001a);
   border-bottom-left-radius: 100px;
   justify-content: center;
@@ -1133,7 +1140,7 @@ label {
 }
 
 .div-block-34 {
-  z-index: 1;
+  z-index: 3;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   background-color: #ffffffd9;
@@ -1249,8 +1256,8 @@ label {
   grid-row-gap: 20px;
   justify-content: flex-start;
   align-items: center;
-  width: 4640px;
-  min-width: 4640px;
+  width: 4800px;
+  min-width: 4800px;
   display: flex;
 }
 
@@ -1851,6 +1858,28 @@ label {
   display: flex;
 }
 
+.background-video-2 {
+  z-index: 1;
+  border-bottom-left-radius: 100px;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.play-state {
+  color: var(--neon-green);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.play-state:hover {
+  color: #fff;
+}
+
+.play-pause-button {
+  margin-right: auto;
+}
+
 @media screen and (min-width: 1280px) {
   h6 {
     font-size: 88px;
@@ -1967,7 +1996,7 @@ label {
   }
 
   .hero-section {
-    height: 75vh;
+    height: 100vh;
   }
 
   .section {
@@ -2227,8 +2256,8 @@ label {
   }
 
   .ticker {
-    width: 4040px;
-    min-width: 4040px;
+    width: 4180px;
+    min-width: 4180px;
   }
 
   .image-13 {
@@ -2381,7 +2410,7 @@ label {
   }
 
   .hero-section {
-    height: 55vh;
+    height: 40vh;
   }
 
   .hero-section.registration {
@@ -2895,7 +2924,7 @@ label {
   }
 
   .card-template.second {
-    background-image: url('../images/distributech2.jpg');
+    background-image: url('../images/distributech-new-new.jpg');
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -3003,13 +3032,13 @@ label {
     right: 20px;
   }
 
-  .service-1-popup {
+  .service-1-popup, .service-2-popup {
     padding: 20px;
     display: none;
   }
 
-  .service-2-popup {
-    padding: 20px;
+  .service-3-popup {
+    display: none;
   }
 
   .p-28 {
@@ -3024,8 +3053,8 @@ label {
   .ticker {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    width: 2600px;
-    min-width: 2600px;
+    width: 2690px;
+    min-width: 2690px;
   }
 
   .image-13 {
@@ -3126,6 +3155,7 @@ label {
   .servoce-4-popup {
     justify-content: flex-start;
     align-items: center;
+    display: none;
   }
 
   .slider-3 {
