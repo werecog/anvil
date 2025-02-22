@@ -1189,7 +1189,7 @@ background-color: #bef84d;
   <script>
     function submitForm(){
           event.preventDefault();
-          var formData = Object.fromEntries(new FormData(document.getElementById('contact-form')).entries())
+          var formData = Object.fromEntries(new FormData(document.getElementById('contactForm')).entries())
           url = $('#contactForm').attr('action')
           $('#submitBtn').val('Submitting...')
           $('#submitBtn').attr('disabled','disabled')
