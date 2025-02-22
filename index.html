@@ -892,23 +892,23 @@ background-color: #bef84d;
               <h2>Get in Touch</h2>
             </div>
             <div class="form-block w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="67adaf536612db1a46d3db74" data-wf-element-id="9cfb01da-c260-1f22-32c9-94dc1c11c37f">
+              <form id="contactForm" data-name="Email Form" method="post" action="https://app.anvil.energy/send/message" class="form" data-wf-page-id="67adaf536612db1a46d3db74" data-wf-element-id="9cfb01da-c260-1f22-32c9-94dc1c11c37f">
                 <div class="div-block-47">
-                  <div class="div-block-46"><label for="name">First Name</label><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" required=""></div>
-                  <div class="div-block-46"><label for="name-2">Last Name</label><input class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="" type="text" id="name-2" required=""></div>
+                  <div class="div-block-46"><label for="name">First Name</label><input class="text-field w-input" maxlength="256" name="first_name" data-name="Name" placeholder="" type="text" id="name" required=""></div>
+                  <div class="div-block-46"><label for="name-2">Last Name</label><input class="text-field w-input" maxlength="256" name="last_name" data-name="Name 2" placeholder="" type="text" id="name-2" required=""></div>
                 </div>
-                <div class="div-block-46"><label for="name-3">Email</label><input class="text-field w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="" type="email" id="name-3" required=""></div>
-                <div class="div-block-46"><label for="field">Inquiring For:</label><select id="field" name="field" data-name="Field" required="" class="select w-select">
-                    <option value="1">Anvil Cables</option>
-                    <option value="2">Anvil Distributech</option>
-                    <option value="3">Anvil Urja</option>
+                <div class="div-block-46"><label for="name-3">Email</label><input class="text-field w-input" maxlength="256" name="email" data-name="Name 3" placeholder="" type="email" id="name-3" required=""></div>
+                <div class="div-block-46"><label for="field">Inquiring For:</label><select id="field" name="field" data-name="inquirying_for" required="" class="select w-select">
+                    <option value="Anvil Cables">Anvil Cables</option>
+                    <option value="Anvil Distributech">Anvil Distributech</option>
+                    <option value="Anvil Urja">Anvil Urja</option>
                   </select></div>
-                <div class="div-block-46"><label for="field-2">Other</label><textarea placeholder="" maxlength="5000" id="field-2" name="field-2" data-name="Field 2" class="text-field w-input"></textarea></div><input type="submit" data-wait="Please wait..." class="submit-button w-button" value="Submit">
+                <div class="div-block-46"><label for="field-2">Other</label><textarea placeholder="" maxlength="5000" id="field-2" name="inquirying_for" data-name="Field 2" class="text-field w-input"></textarea></div><input type="submit" id="submitBtn" data-wait="Please wait..." class="submit-button w-button" value="Submit">
               </form>
-              <div class="success-message w-form-done">
+              <div class="success-message w-form-done" id="suc">
                 <div>Thank you! Your submission has been received!</div>
               </div>
-              <div class="error-message w-form-fail">
+              <div class="error-message w-form-fail" id="fai">
                 <div>Oops! Something went wrong while submitting the form.</div>
               </div>
             </div>
@@ -1185,6 +1185,32 @@ background-color: #bef84d;
     });
   });
 })();
-</script>
+  </script>
+  <script>
+    function submitForm(){
+          event.preventDefault();
+          var formData = Object.fromEntries(new FormData(document.getElementById('contact-form')).entries())
+          url = $('#contactForm').attr('action')
+          $('#submitBtn').val('Submitting...')
+          $('#submitBtn').attr('disabled','disabled')
+          $.post(url, formData)
+          .always(function(data){
+            if(parseInt(data.status) > 200){
+              $('#fai').css("display","flex")
+              setTimeout(function(){
+                $('#fai').removeAttr('style')
+              },2000)
+            }else{
+              $('#suc').css("display","flex")
+              setTimeout(function(){
+                $('#suc').removeAttr('style')
+              },2000)
+            }
+            document.getElementById('contact-form').reset();
+            $('#submitBtn').val('Submit');
+            $('#submitBtn').removeAttr('disabled')
+          });
+    }
+  </script>
 </body>
 </html>
