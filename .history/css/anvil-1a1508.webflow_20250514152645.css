@@ -145,7 +145,7 @@ label {
 }
 
 .section.stats.no-bottom-margin {
-  padding-bottom: 140px;
+  padding-bottom: 180px;
 }
 
 .section.double-pd {
@@ -178,14 +178,18 @@ label {
 }
 
 .section.double-pd.pdbt_extra {
-  padding-bottom: 300px;
+  padding-bottom: 360px;
 }
 
 .section.off {
   display: none;
 }
 
-.section.certifications, .section.no-pd-tp {
+.section.certifications {
+  padding-top: 0;
+}
+
+.section.no-pd-tp {
   padding-top: 180px;
 }
 
@@ -1055,7 +1059,7 @@ label {
   grid-column-gap: 40px;
   grid-row-gap: 40px;
   color: #fff;
-  background-image: url('../images/13.webp'), url('../images/');
+  background-image: url('../images/13.webp'), url('../images/infrastructure_expand.webp');
   background-position: 0 100%, 50%;
   background-repeat: no-repeat, no-repeat;
   background-size: 25%, cover;
@@ -1348,7 +1352,7 @@ label {
   border-radius: 40px;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   position: absolute;
   inset: 0%;
   overflow: hidden;
@@ -2307,9 +2311,7 @@ label {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
-  padding-top: 140px;
-  padding-bottom: 200px;
+  height: 100vh;
   display: flex;
 }
 
@@ -2690,7 +2692,7 @@ label {
   }
 
   .div-block-31.on {
-    background-image: url('../images/');
+    background-image: url('../images/infrastructure_expand.webp');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3316,10 +3318,11 @@ label {
   }
 
   .div-block-31.on {
-    background-image: url('../images/');
+    background-image: url('../images/infrastructure_expand.webp');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: scroll;
   }
 
   .grid-4 {
@@ -3703,10 +3706,6 @@ label {
     padding-bottom: 0;
   }
 
-  .section.no-pd-tp.sustainable {
-    padding-bottom: 0;
-  }
-
   .section._100vh-sc {
     padding-top: 0;
     padding-bottom: 120px;
@@ -3949,10 +3948,6 @@ label {
     max-width: 180px;
   }
 
-  ._100 {
-    padding-top: 60px;
-  }
-
   .div-block-54 {
     grid-column-gap: 30px;
     grid-row-gap: 30px;
@@ -4045,11 +4040,6 @@ label {
 
   .image-25 {
     max-width: 80%;
-  }
-
-  .div-block-65 {
-    padding-top: 0;
-    padding-bottom: 0;
   }
 
   .big-text-class {
